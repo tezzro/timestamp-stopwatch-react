@@ -144,13 +144,16 @@ class Stopwatch extends React.Component {
                         <ul>
                             {this.state.logEntries.map((entry, index) => (
                                 <li key={entry.timestamp.toISOString()} className="logentry">
-                                    <span class="timestamp">{this.formatTimestamp(entry.timestamp)} </span>
-                                    <input className="loginput" type="text" value={entry.note}
-                                        onClick={this.selectAllText} onChange={ e => {
-                                        let logEntries = this.state.logEntries;
-                                        logEntries[index].note = e.target.value;
-                                        this.setState({logEntries: logEntries});
-                                    }} />
+                                    <strong>{index + 1}</strong>
+                                    <div>
+                                        <span class="timestamp">{this.formatTimestamp(entry.timestamp)} </span>
+                                        <input className="loginput" type="text" value={entry.note}
+                                            onClick={this.selectAllText} onChange={ e => {
+                                            let logEntries = this.state.logEntries;
+                                            logEntries[index].note = e.target.value;
+                                            this.setState({logEntries: logEntries});
+                                        }} />
+                                    </div>
                                 </li>
                             ))}
                         </ul>
