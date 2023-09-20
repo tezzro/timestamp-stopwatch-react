@@ -32,6 +32,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    font-variant-numeric: tabular-nums;
 }
 
 .timestamp {
@@ -62,4 +63,8 @@
 #explanation {
     text-align: left;
     line-height: 120%;
+}
+
+.audio {
+    display: none;
 }

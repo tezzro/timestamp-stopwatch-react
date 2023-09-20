@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import './Stopwatch.css';
 
 import Toast from 'light-toast';
@@ -10,6 +10,7 @@ import CopyIcon from './Copy.png';
 import ShareIcon from './Share.png';
 
 class Stopwatch extends React.Component {
+    
     constructor(props) {
         super(props);
         this.handleStart = this.handleStart.bind(this);
@@ -17,10 +18,11 @@ class Stopwatch extends React.Component {
         this.handleLogTime = this.handleLogTime.bind(this);
         this.handleCopy = this.handleCopy.bind(this);
         this.handleShare = this.handleShare.bind(this);
-
+        
         this.copyTextAreaRef = React.createRef();
-
+        
         this.state = {running: false, log: '(hit start)', logEntries:[]};
+        this.audioRef = createRef(null);
     }
 
     handleStart(e) {
@@ -84,6 +86,7 @@ class Stopwatch extends React.Component {
         this.setState((state, props) => ({
             logEntries: [{timestamp: new Date(), note: note}, ...state.logEntries]
         }));
+        this.audioRef.current.play();
     }
 
     render() {
@@ -102,6 +105,7 @@ class Stopwatch extends React.Component {
 
         return (
             <div id="stopwatch">
+                <audio ref={this.audioRef} className='audio' src="/click1.mp3" />
                 <div id="buttons">
                     {firstButton}
                     <button onClick={this.handleStop} disabled={!this.state.running}>
