@@ -7,8 +7,14 @@
     text-align: center;
     -webkit-appearance: none;
     border-radius: 0;
+    border: 0;
+    background-color: #e4e4e4;
     /* Avoid double tap to zoom? */
     touch-action: manipulation;
+}
+
+#buttons button:active{
+    background-color: #bbb;
 }
 
 
