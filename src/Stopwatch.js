@@ -87,9 +87,8 @@ class Stopwatch extends React.Component {
             logEntries: [{timestamp: new Date(), note: note}, ...state.logEntries]
         }));
 
-        const audio = this.audioRef.current;
-        audio.currentTime = 0;
-        audio.play();
+    
+        this.audioRef.current.play();
     }
 
     removeLogEntry() {
