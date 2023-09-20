@@ -164,10 +164,10 @@ class Stopwatch extends React.Component {
                                             logEntries[index].note = e.target.value;
                                             this.setState({logEntries: logEntries});
                                         }} />
-                                        {index === 0 && 
-                                            <button className='remove-button' onClick={() => this.removeLogEntry()}>Remove</button>
-                                        }
                                     </div>
+                                    {index === 0 && this.state.running && 
+                                        <button className='remove-button' onClick={() => this.removeLogEntry()}>Remove</button>
+                                    }
                                 </li>
                             ))}
                         </ul>

@@ -1,3 +1,11 @@
+#buttons {
+    margin: 0 auto;
+}
+
+#stopwatch {
+    width: 100%;
+}
+
 #buttons button {
     margin: 5px;
     width: 80px;
@@ -31,6 +39,9 @@
     color: black;
     text-align: left;
     font-size: 14px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .logentry {
@@ -45,6 +56,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-grow: 1;
 }
 
 .timestamp {
