@@ -82,7 +82,7 @@ class Stopwatch extends React.Component {
 
     addLogEntry(note) {
         this.setState((state, props) => ({
-            logEntries: state.logEntries.concat([{timestamp: new Date(), note: note}])
+            logEntries: [{timestamp: new Date(), note: note}, ...state.logEntries]
         }));
     }
 
@@ -144,7 +144,7 @@ class Stopwatch extends React.Component {
                         <ul>
                             {this.state.logEntries.map((entry, index) => (
                                 <li key={entry.timestamp.toISOString()} className="logentry">
-                                    <strong>{index + 1}</strong>
+                                    <strong>{(this.state.logEntries?.length || 0) - index}</strong>
                                     <div>
                                         <span class="timestamp">{this.formatTimestamp(entry.timestamp)} </span>
                                         <input className="loginput" type="text" value={entry.note}
