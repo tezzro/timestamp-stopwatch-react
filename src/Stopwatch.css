@@ -35,6 +35,12 @@
     font-variant-numeric: tabular-nums;
 }
 
+.logentry div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .timestamp {
     color: gray;
 }
