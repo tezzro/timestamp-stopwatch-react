@@ -54,6 +54,7 @@
 .loginput {
     font-size: 18px;
     border-style: hidden;
+    max-width: 90px;
     outline: none;
 }
 
