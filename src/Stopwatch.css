@@ -80,3 +80,7 @@
 .audio {
     display: none;
 }
+
+.remove-button {
+    margin-right: 10px;
+}

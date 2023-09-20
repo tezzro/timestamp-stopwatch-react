@@ -89,6 +89,13 @@ class Stopwatch extends React.Component {
         this.audioRef.current.play();
     }
 
+    removeLogEntry() {
+        console.log([...this.state.logEntries].shift())
+        this.setState({
+            logEntries: this.state.logEntries.slice(1)
+        })
+    }
+
     render() {
         let firstButton;
         if (!this.state.running) {
@@ -157,6 +164,9 @@ class Stopwatch extends React.Component {
                                             logEntries[index].note = e.target.value;
                                             this.setState({logEntries: logEntries});
                                         }} />
+                                        {index === 0 && 
+                                            <button className='remove-button' onClick={() => this.removeLogEntry()}>Remove</button>
+                                        }
                                     </div>
                                 </li>
                             ))}
